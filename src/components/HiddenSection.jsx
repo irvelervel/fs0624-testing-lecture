@@ -5,7 +5,7 @@ const HiddenSection = () => {
   const [show, setShow] = useState(false)
 
   const handleClick = () => {
-    setShow(!show)
+    setShow(!show) // toggle, da true -> false o da false -> true
   }
 
   return (
