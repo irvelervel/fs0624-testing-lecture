@@ -87,4 +87,16 @@ describe('testing card behavior', () => {
     const cardImage = screen.queryByRole('img')
     expect(cardImage).not.toBeInTheDocument()
   })
+
+  it('checks the new button label after a click', () => {
+    // 1)
+    render(<HiddenSection />)
+    // 2) cerco il bottone "MOSTRA"
+    const mostraButton = screen.getByText(/mostra/i)
+    // 3) ci clicco sopra
+    fireEvent.click(mostraButton)
+    // 4) cerco il bottone con etichetta "NASCONDI" e ne verifico l'esistenza
+    const nascondiButton = screen.getByText(/nascondi/i)
+    expect(nascondiButton).toBeInTheDocument()
+  })
 })
